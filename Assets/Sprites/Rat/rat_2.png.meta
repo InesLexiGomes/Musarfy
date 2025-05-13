@@ -116,12 +116,12 @@ TextureImporter:
       name: rat_2_0
       rect:
         serializedVersion: 2
-        x: 71
-        y: 52
-        width: 1003
-        height: 1019
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 174
+        y: 288
+        width: 654
+        height: 801
+      alignment: 9
+      pivot: {x: 0.5086388, y: 0.2869851}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -138,7 +138,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: a72cf87a0d5933a40b082688843090e6
     internalID: 0
     vertices: []
     indices: 
@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      rat_2_0: -877482098394008851
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
