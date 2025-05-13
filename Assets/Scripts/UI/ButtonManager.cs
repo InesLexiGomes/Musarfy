@@ -5,14 +5,17 @@ using UnityEngine;
 public class ButtonManager : MonoBehaviour
 {
     [SerializeField] GameObject pauseMenu;
+    private Animator animator;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        if (pauseMenu == null)
+        animator = GetComponent<Animator>();
+        /*if (pauseMenu == null)
         {
             return;
-        }
+        }*/
+        pauseMenu.SetActive(false);
     }
 
     // Update is called once per frame
@@ -27,8 +30,12 @@ public class ButtonManager : MonoBehaviour
 
     public void Resume()
     {
-        pauseMenu.SetActive(false);
         Time.timeScale = 1f;
+        if (animator != null)
+        {
+            animator.ResetTrigger(2);
+        }
+        pauseMenu.SetActive(false);
     }
 
     public void Quit()
