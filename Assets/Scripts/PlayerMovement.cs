@@ -33,8 +33,9 @@ public class PlayerMovement : MonoBehaviour
         if (moveDirection !=  Vector2.zero)
         {
             float targetAngle = Mathf.Atan2(moveDirection.y, moveDirection.x) * Mathf.Rad2Deg + -90;
-            
-            currentAngle = Mathf.Lerp(currentAngle, targetAngle, Time.deltaTime * rotationMultiplier);
+
+            float angleDiff = Mathf.DeltaAngle(currentAngle, targetAngle);
+            currentAngle += angleDiff * Time.deltaTime * rotationMultiplier;
             transform.rotation = Quaternion.AngleAxis(currentAngle, Vector3.forward);
         }
     }
