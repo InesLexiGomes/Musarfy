@@ -6,10 +6,14 @@ public class RatMovement : MonoBehaviour
 {
     [SerializeField] private float speed;
     [SerializeField] private float rotationMultiplier;
+    [SerializeField] private float headRotationMultiplier;
+
+    [SerializeField] private GameObject head;
 
     private Rigidbody2D rb;
 
-    private float currentAngle;
+    private float currentAngleBody;
+    private float currentAngleHead;
 
     private void Start()
     {
@@ -28,9 +32,13 @@ public class RatMovement : MonoBehaviour
         {
             float targetAngle = Mathf.Atan2(moveDirection.y, moveDirection.x) * Mathf.Rad2Deg + -90;
 
-            float angleDiff = Mathf.DeltaAngle(currentAngle, targetAngle);
-            currentAngle += angleDiff * Time.deltaTime * rotationMultiplier;
-            transform.rotation = Quaternion.AngleAxis(currentAngle, Vector3.forward);
+            float angleDiffBody = Mathf.DeltaAngle(currentAngleBody, targetAngle);
+            currentAngleBody += angleDiffBody * Time.deltaTime * rotationMultiplier;
+            transform.rotation = Quaternion.AngleAxis(currentAngleBody, Vector3.forward);
+
+            float angleDiffHead = Mathf.DeltaAngle(currentAngleHead, targetAngle);
+            currentAngleHead += angleDiffHead * Time.deltaTime * headRotationMultiplier;
+            head.transform.rotation = Quaternion.AngleAxis(currentAngleHead, Vector3.forward);
         }
     }
 }
