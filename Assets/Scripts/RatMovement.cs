@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.UIElements;
 
-public class PlayerMovement : MonoBehaviour
+public class RatMovement : MonoBehaviour
 {
     [SerializeField] private float speed;
     [SerializeField] private float rotationMultiplier;
@@ -16,14 +16,8 @@ public class PlayerMovement : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
     }
 
-    private void Update()
+    public void DoMovement(Vector2 moveDirection)
     {
-        DoMovement();
-    }
-
-    private void DoMovement()
-    {
-        Vector2 moveDirection = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
         rb.linearVelocity = moveDirection * speed;
         Rotate(moveDirection);
     }
