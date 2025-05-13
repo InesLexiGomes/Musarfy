@@ -22,8 +22,8 @@ public class RatMovement : MonoBehaviour
 
     public void DoMovement(Vector2 moveDirection)
     {
-        rb.linearVelocity = moveDirection * speed;
         Rotate(moveDirection);
+        rb.linearVelocity = transform.up * moveDirection.magnitude * speed;
     }
 
     private void Rotate(Vector2 moveDirection)
