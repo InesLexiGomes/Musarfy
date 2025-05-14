@@ -21,7 +21,6 @@ public class EnemyPath : MonoBehaviour
     private Vector2 direction;
     private EnemyStateManager stateManager;
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         stateManager = GetComponent<EnemyStateManager>();
@@ -31,7 +30,6 @@ public class EnemyPath : MonoBehaviour
             SetDirectionToCurrentWaypoint();
     }
 
-    // Update is called once per frame
     private void FixedUpdate()
     {
         if (waypoints.Length == 0 || stateManager.CurrentState != EnemyStates.Patrolling)
@@ -49,9 +47,7 @@ public class EnemyPath : MonoBehaviour
 
         direction = (targetWaypoint.position - transform.position).normalized;
 
-        isHorizontal = Mathf.Abs(direction.x) > Mathf.Abs(direction.y);
-
-        ApplyMovement(isHorizontal);
+        ApplyMovement();
 
         if (IsNearWaypoint(targetWaypoint))
         {
@@ -59,20 +55,9 @@ public class EnemyPath : MonoBehaviour
         }
     }
 
-    private void ApplyMovement(bool isMoveHorizontal)
+    private void ApplyMovement()
     {
-        Vector2 velocity = rb.linearVelocity;
-
-        if (isMoveHorizontal)
-        {
-            velocity.x = (stateManager.CurrentState == EnemyStates.Waiting) ? 0 : direction.x * speed;
-            rb.linearVelocity = new Vector2(velocity.x, rb.linearVelocityY);
-        }
-        else
-        {
-            velocity.y = (stateManager.CurrentState == EnemyStates.Waiting) ? 0 : direction.y * speed;
-            rb.linearVelocity = new Vector2(rb.linearVelocityX, velocity.y);
-        }
+        transform.position = Vector2.MoveTowards(transform.position, waypoints[currentWaypointIndex].position, speed * Time.deltaTime);
 
         if (stateManager.CurrentState != EnemyStates.Waiting)
             Flip(); 
@@ -109,7 +94,6 @@ public class EnemyPath : MonoBehaviour
         currentWaypointIndex = (currentWaypointIndex + 1) % waypoints.Length;
 
         SetDirectionToCurrentWaypoint();
-        //Flip();
 
         stateManager.SetState(EnemyStates.Patrolling);
     }
