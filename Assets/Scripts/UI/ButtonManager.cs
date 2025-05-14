@@ -1,22 +1,22 @@
 using NUnit.Framework;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class ButtonManager : MonoBehaviour
 {
-    [SerializeField] private GameObject pauseMenu;
+    [SerializeField] private GameObject menu;
     private Animator[] animators;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        animators = pauseMenu.GetComponentsInChildren<Animator>();
-        //GetComponent<Animator>();
+        animators = menu.GetComponentsInChildren<Animator>();
         /*if (pauseMenu == null)
         {
             return;
         }*/
-        pauseMenu.SetActive(false);
+        menu.SetActive(false);
     }
 
     // Update is called once per frame
@@ -25,23 +25,48 @@ public class ButtonManager : MonoBehaviour
         if (Input.GetButton("Cancel"))
         {
             Time.timeScale = 0f;
-            pauseMenu.SetActive(true);
             foreach (Animator animator in animators)
             {
                 animator.ResetTrigger("Pressed");
             }
+            menu.SetActive(true);
         }
     }
 
-    public void Resume()
+    public void StartGame()
+    {
+        SceneManager.LoadScene(1);
+    }
+
+    public void ControlsMenu()
+    {
+        Time.timeScale = 0f;
+        foreach (Animator animator in animators)
+        {
+            animator.ResetTrigger("Pressed");
+        }
+        menu.SetActive(true);
+    }
+
+    public void ExitControlsMenu()
     {
         Time.timeScale = 1f;
-        pauseMenu.SetActive(false);
+        menu.SetActive(false);
     }
 
     public void Quit()
     {
-        Debug.Log("Quit game!");
+        Debug.Log("Exit game!");
         Application.Quit();
+    }
+    public void Resume()
+    {
+        Time.timeScale = 1f;
+        menu.SetActive(false);
+    }
+
+    public void Exit()
+    {
+        SceneManager.LoadScene(0);
     }
 }
