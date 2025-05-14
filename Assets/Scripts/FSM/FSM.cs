@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class FSM : MonoBehaviour
+public abstract class FSM : MonoBehaviour
 {
     [SerializeField] private FSMTransition[] anyStateTransitions;
     [SerializeField] private FSMState initialState;
@@ -18,4 +18,6 @@ public class FSM : MonoBehaviour
             }
         }
     }
+
+    public abstract void DoAction(uint actionID);
 }
