@@ -4,7 +4,8 @@ public class NPC : MonoBehaviour
 {
     Ray ray;
 
-    int maxDistance = 100;
+    [SerializeField] int maxDistance = 1000;
+    [SerializeField] LayerMask layers;
 
 
 
@@ -17,9 +18,9 @@ public class NPC : MonoBehaviour
     void Update()
     {
 
-        Ray2D ray = new Ray2D(transform.position, transform.forward);
+        Ray2D ray = new Ray2D(transform.position, transform.up);
 
-        RaycastHit2D hit = Physics2D.Raycast(ray.origin, ray.direction, maxDistance);
+        RaycastHit2D hit = Physics2D.Raycast(ray.origin, ray.direction, maxDistance, layers);
 
         if (hit.collider != null)
         {

@@ -8,6 +8,8 @@ public class RatMovement : MonoBehaviour
     [SerializeField] private float rotationMultiplier;
     [SerializeField] private float headRotationMultiplier;
 
+    [SerializeField] private float maxHeadTurnAngle = 90;
+
     [SerializeField] private GameObject head;
 
     private Rigidbody2D rb;
@@ -36,7 +38,11 @@ public class RatMovement : MonoBehaviour
             currentAngleBody += angleDiffBody * Time.deltaTime * rotationMultiplier;
             transform.rotation = Quaternion.AngleAxis(currentAngleBody, Vector3.forward);
 
-            float angleDiffHead = Mathf.DeltaAngle(currentAngleHead, targetAngle);
+            float relativeHeadAngle = Mathf.DeltaAngle(currentAngleBody, currentAngleHead);
+            float targetRelativeAngle = Mathf.DeltaAngle(currentAngleBody, targetAngle);
+            targetRelativeAngle = Mathf.Clamp(targetRelativeAngle, -maxHeadTurnAngle, maxHeadTurnAngle);
+
+            float angleDiffHead = targetRelativeAngle - relativeHeadAngle;
             currentAngleHead += angleDiffHead * Time.deltaTime * headRotationMultiplier;
             head.transform.rotation = Quaternion.AngleAxis(currentAngleHead, Vector3.forward);
         }
