@@ -19,5 +19,5 @@ public abstract class FSM : MonoBehaviour
         }
     }
 
-    public abstract void DoAction(uint actionID);
+    public abstract void DoAction(string actionID);
 }
