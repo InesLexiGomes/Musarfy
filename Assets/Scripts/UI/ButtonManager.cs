@@ -4,13 +4,14 @@ using UnityEngine;
 
 public class ButtonManager : MonoBehaviour
 {
-    [SerializeField] GameObject pauseMenu;
-    private Animator animator;
+    [SerializeField] private GameObject pauseMenu;
+    private Animator[] animators;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        animator = GetComponent<Animator>();
+        animators = pauseMenu.GetComponentsInChildren<Animator>();
+        //GetComponent<Animator>();
         /*if (pauseMenu == null)
         {
             return;
@@ -23,18 +24,18 @@ public class ButtonManager : MonoBehaviour
     {
         if (Input.GetButton("Cancel"))
         {
-            pauseMenu.SetActive(true);
             Time.timeScale = 0f;
+            pauseMenu.SetActive(true);
+            foreach (Animator animator in animators)
+            {
+                animator.ResetTrigger("Pressed");
+            }
         }
     }
 
     public void Resume()
     {
         Time.timeScale = 1f;
-        if (animator != null)
-        {
-            animator.ResetTrigger(2);
-        }
         pauseMenu.SetActive(false);
     }
 
