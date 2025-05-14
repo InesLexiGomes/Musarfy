@@ -703,6 +703,7 @@ MonoBehaviour:
   speed: 10
   rotationMultiplier: 5
   headRotationMultiplier: 0
+  maxHeadTurnAngle: 0
   head: {fileID: 0}
 --- !u!50 &1790006729
 Rigidbody2D:
@@ -801,6 +802,10 @@ PrefabInstance:
     - target: {fileID: 2555380980386012763, guid: 50c6e434beb9a594597ed185470c6801, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8424620008282217411, guid: 50c6e434beb9a594597ed185470c6801, type: 3}
+      propertyPath: maxHeadTurnAngle
+      value: 90
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

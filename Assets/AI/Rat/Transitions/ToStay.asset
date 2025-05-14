@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a96f3af1ee04be24bbf658ff1fb380fa, type: 3}
   m_Name: ToStay
   m_EditorClassIdentifier: 
-  transitionState: {fileID: 0}
+  transitionState: {fileID: 11400000, guid: 950c9c92feb2aaf4d8b1c04bd14df013, type: 2}
   conditions: []
