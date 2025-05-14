@@ -197,6 +197,7 @@ MonoBehaviour:
   speed: 10
   rotationMultiplier: 3
   headRotationMultiplier: 5
+  maxHeadTurnAngle: 90
   head: {fileID: 8566880195991321517}
 --- !u!114 &1965743872013064773
 MonoBehaviour:
