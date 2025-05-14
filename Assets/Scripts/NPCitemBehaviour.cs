@@ -4,24 +4,53 @@ public class NPCitemBehaviour : MonoBehaviour
 {
 
     Interact interact;
+
     SpriteRenderer spriteRenderer;
-    private bool isHovered = false;
+
+    [SerializeField] private float distanceThreshold = 2f;
+
+    private bool inDistance = false;
+
+    private bool itemchecked = false;
+
+    private GameObject player;
+
     void Start()
     {
         interact = FindAnyObjectByType<Interact>();
+        player = FindFirstObjectByType<PlayerInput>().gameObject;
         spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
-
-    void OnMouseEnter()
+    void Update()
     {
-        isHovered = true;
-        Debug.Log("Mouse is over the platform!");
+        ItemCheck();
 
-        if (isHovered && interact.Lettuce)
+        if (inDistance && Input.GetKeyDown(KeyCode.E))
         {
-            Debug.Log("Lettuce picked up!");
-            spriteRenderer.color = new Color(0, 0, 0, 1f); // Alpha should be 0-1
+            ItemInteract();
+        }
+    }
+
+    void ItemCheck()
+    {
+        float distanceToPlayer = Vector2.Distance(player.transform.position, transform.position);
+
+        if (distanceToPlayer < distanceThreshold && interact.Lettuce)
+        {
+            inDistance = true;
+            Debug.Log("Mouse in distance!");
+            itemchecked = true;
+        }
+
+    }
+    void ItemInteract()
+    {
+        if (itemchecked)
+        {
+            Debug.Log("Item checked!");
+            spriteRenderer.color = new Color(0, 0, 0, 1f);
+            enabled = false;
         }
     }
 }
