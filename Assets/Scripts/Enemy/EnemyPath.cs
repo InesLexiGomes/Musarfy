@@ -72,13 +72,13 @@ public class EnemyPath : MonoBehaviour
     private void Flip()
     {
         // If direction.x is positive, face right (0° rotation), else face left (180° rotation)
-        float yRotation;
+        float zRotation;
         if (direction.x >= 0)
-            yRotation = 0f;
+            zRotation = 0f;
         else
-            yRotation = 180f;
+            zRotation = 180f;
 
-        transform.rotation = Quaternion.Euler(0, yRotation, 0);
+        transform.rotation = Quaternion.Euler(0, 0, zRotation);
     }
 
     private IEnumerator PauseBeforeNextWaypoint()
