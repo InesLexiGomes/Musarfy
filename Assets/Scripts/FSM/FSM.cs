@@ -6,7 +6,12 @@ public abstract class FSM : MonoBehaviour
     [SerializeField] private FSMState initialState;
     public FSMState CurrentState;
 
-    private void FixedUpdate()
+    protected virtual void Start()
+    {
+        CurrentState = initialState;
+    }
+
+    protected virtual void Update()
     {
         CurrentState.Execute(this);
 
