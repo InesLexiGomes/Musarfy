@@ -6,6 +6,12 @@ public class RatFSM : FSM
     [SerializeField] private float minDistance;
     [SerializeField] private float returnDistance;
 
+    [SerializeField] private string questDialogue;
+    [SerializeField] private string questEndDialogue;
+
+    public string QuestDialogue { get { return questDialogue; } }
+    public string QuestEndDialogue { get { return questEndDialogue; } }
+
     private PlayerInput player;
     private RatMovement movement;
 
