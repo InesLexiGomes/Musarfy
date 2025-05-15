@@ -1,7 +1,11 @@
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "FSMCondition", menuName = "Scriptable Objects/FSM Condition")]
-public abstract class FSMCondition : ScriptableObject
+public class FSMCondition : ScriptableObject
 {
-    public abstract bool CheckCondition(FSM stateMachine);
+    public string conditionId;
+    public bool CheckCondition(FSM stateMachine)
+    {
+        return stateMachine.CheckCondition(conditionId);
+    }
 }

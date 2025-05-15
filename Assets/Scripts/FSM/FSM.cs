@@ -20,4 +20,5 @@ public abstract class FSM : MonoBehaviour
     }
 
     public abstract void DoAction(string actionID);
+    public abstract bool CheckCondition(string conditionID);
 }
