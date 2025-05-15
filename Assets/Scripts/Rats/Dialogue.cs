@@ -10,6 +10,7 @@ public class Dialogue : MonoBehaviour
     private bool dialogueEnabled;
 
     private RatFSM currentRat;
+    private uint currentDialogueID;
 
     private void Update()
     {
@@ -27,13 +28,18 @@ public class Dialogue : MonoBehaviour
         player.enabled = false;
         currentRat = rat;
 
-        if (rat.CheckCondition("Requirements Fulfilled?"))
+        text.text = currentRat.GetQuestDialogue(currentDialogueID);
+    }
+
+    public void NextDialogue()
+    {
+        if (++currentDialogueID < currentRat.GetQuestDialogueLenght())
         {
-            text.text = rat.QuestEndDialogue;
+            text.text = currentRat.GetQuestDialogue(currentDialogueID);
         }
         else
         {
-            text.text = rat.QuestDialogue;
+            DisableDialogue();
         }
     }
 
@@ -41,9 +47,12 @@ public class Dialogue : MonoBehaviour
     {
         dialogueUI.SetActive(false);
 
+        currentDialogueID = 0;
         dialogueEnabled = false;
         player.enabled = true;
         currentRat.StopInteracting();
         currentRat = null;
     }
+
+
 }

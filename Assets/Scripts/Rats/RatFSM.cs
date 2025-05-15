@@ -6,11 +6,8 @@ public class RatFSM : FSM
     [SerializeField] private float minDistance;
     [SerializeField] private float returnDistance;
 
-    [SerializeField] private string questDialogue;
-    [SerializeField] private string questEndDialogue;
-
-    public string QuestDialogue { get { return questDialogue; } }
-    public string QuestEndDialogue { get { return questEndDialogue; } }
+    [SerializeField] private string[] questDialogue;
+    [SerializeField] private string[] questEndDialogue;
 
     private PlayerInput player;
     private RatMovement movement;
@@ -124,5 +121,29 @@ public class RatFSM : FSM
     {
         distanceToPlayer = (player.transform.position - transform.position).magnitude;
         return distanceToPlayer > maxDistance;
+    }
+
+    public string GetQuestDialogue(uint currentDialogueID)
+    {
+        if (!requirementsFulfilled)
+        {
+            return questDialogue[currentDialogueID];
+        }
+        else
+        {
+            return questEndDialogue[currentDialogueID];
+        }
+    }
+
+    public int GetQuestDialogueLenght()
+    {
+        if (!requirementsFulfilled)
+        {
+            return questDialogue.Length;
+        }
+        else
+        {
+            return questEndDialogue.Length;
+        }
     }
 }
