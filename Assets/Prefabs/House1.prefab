@@ -94,7 +94,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5611864885148674716}
   - component: {fileID: 6391691132659885967}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Door
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -174,7 +174,8 @@ GameObject:
   - component: {fileID: 9031991498479010469}
   - component: {fileID: 705671255971643734}
   - component: {fileID: 117773037294778063}
-  m_Layer: 0
+  - component: {fileID: -3777191020949073194}
+  m_Layer: 7
   m_Name: House1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -307,3 +308,56 @@ PolygonCollider2D:
       - {x: -45.052067, y: 88.761795}
       - {x: -200, y: 93.33333}
   m_UseDelaunayMesh: 0
+--- !u!114 &-3777191020949073194
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5555945678744137325}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7db70e0ea77f5ac47a8f4565a9406397, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ShadowGroup: 0
+  m_Priority: 0
+  m_ComponentVersion: 5
+  m_HasRenderer: 0
+  m_UseRendererSilhouette: 1
+  m_CastsShadows: 1
+  m_SelfShadows: 0
+  m_AlphaCutoff: 0
+  m_ApplyToSortingLayers: 00000000
+  m_ShapePath:
+  - {x: -133.33337, y: -199.99998, z: 0}
+  - {x: -133.33337, y: 199.99998, z: 0}
+  - {x: 133.33331, y: 199.99998, z: 0}
+  - {x: 133.33331, y: -199.99998, z: 0}
+  m_ShapePathHash: 0
+  m_InstanceId: 0
+  m_ShadowShape2DComponent: {fileID: 705671255971643734}
+  m_ShadowShape2DProvider:
+    rid: 6727488663734452507
+  m_ShadowCastingSource: 2
+  m_ShadowMesh:
+    m_Mesh: {fileID: 0}
+    m_LocalBounds:
+      m_Center: {x: 0, y: -5, z: 0}
+      m_Extent: {x: 189.99998, y: 91.66666, z: 0}
+    m_EdgeProcessing: 1
+    m_TrimEdge: 10
+    m_FlipX: 0
+    m_FlipY: 0
+    m_InitialTrim: 10
+  m_CastingOption: 1
+  m_PreviousTrimEdge: 0
+  m_PreviousEdgeProcessing: -1
+  m_PreviousShadowCastingSource: -1
+  m_PreviousShadowShape2DSource: {fileID: 0}
+  references:
+    version: 2
+    RefIds:
+    - rid: 6727488663734452507
+      type: {class: ShadowShape2DProvider_SpriteRenderer, ns: UnityEngine.Rendering.Universal, asm: Unity.RenderPipelines.Universal.2D.Runtime}
+      data: 
