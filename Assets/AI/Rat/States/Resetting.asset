@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Resetting
   m_EditorClassIdentifier: 
   transitions:
-  - {fileID: 11400000, guid: f18d43e08496ba54ca9c48442f2f338a, type: 2}
+  - {fileID: 11400000, guid: 0fd8c159052cff84e926c5fc91e9ecfe, type: 2}
   action: {fileID: 11400000, guid: d0fab22c0579b9a459ee81237872b166, type: 2}

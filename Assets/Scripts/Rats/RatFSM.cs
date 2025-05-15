@@ -6,8 +6,9 @@ public class RatFSM : FSM
     [SerializeField] private float returnDistance;
 
     private PlayerInput player;
-
     private RatMovement movement;
+
+    private Vector2 initialPosition;
 
     private bool requirementsFulfilled = false;
     private bool beingInteractedWith = false;
@@ -16,6 +17,7 @@ public class RatFSM : FSM
     private void Start()
     {
         player = FindAnyObjectByType<PlayerInput>();
+        initialPosition = transform.position;
     }
 
     public override void DoAction(string actionID)
@@ -50,6 +52,9 @@ public class RatFSM : FSM
             case ("Interacting?"):
                 return beingInteractedWith;
 
+            case ("Done Interacting?"):
+                return !beingInteractedWith;
+
             case ("Requirements Fulfilled?"):
                 return requirementsFulfilled;
 
@@ -72,7 +77,7 @@ public class RatFSM : FSM
     }
     private void Reset()
     {
-
+        transform.position = initialPosition;
     }
     private void Return()
     {
@@ -81,7 +86,7 @@ public class RatFSM : FSM
     }
     private void Talk()
     {
-
+        // Insert dialogue code here
     }
 
     // Condition Methods

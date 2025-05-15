@@ -13,4 +13,5 @@ MonoBehaviour:
   m_Name: PlayerInteraction
   m_EditorClassIdentifier: 
   transitionState: {fileID: 11400000, guid: ab8f40441f21e4a4991bd1912b655b91, type: 2}
-  conditions: []
+  conditions:
+  - {fileID: 11400000, guid: f97ba629b2037544980b1ad40021220f, type: 2}
