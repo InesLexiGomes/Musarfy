@@ -13,8 +13,6 @@ public class EnemyPath : MonoBehaviour
     private float speed;
     [SerializeField]
     private float waitTime = 1.5f;
-    [SerializeField]
-    private bool isHorizontal = true;
 
     private int currentWaypointIndex = 0;
     private Rigidbody2D rb;
