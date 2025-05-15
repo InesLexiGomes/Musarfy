@@ -13,4 +13,5 @@ MonoBehaviour:
   m_Name: IsSpotted
   m_EditorClassIdentifier: 
   transitionState: {fileID: 11400000, guid: 5c9b311b29940054391fc34fb58bce2f, type: 2}
-  conditions: []
+  conditions:
+  - {fileID: 11400000, guid: e59016d58c4829d4f83a31a4ec21b34e, type: 2}

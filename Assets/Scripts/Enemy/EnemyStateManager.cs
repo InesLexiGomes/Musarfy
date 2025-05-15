@@ -12,9 +12,4 @@ public class EnemyStateManager : MonoBehaviour
 
         CurrentState = newState;
     }
-
-    private void Update()
-    {
-        Debug.Log(CurrentState);
-    }
 }

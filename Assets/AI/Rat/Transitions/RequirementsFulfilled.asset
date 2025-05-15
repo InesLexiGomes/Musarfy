@@ -13,4 +13,5 @@ MonoBehaviour:
   m_Name: RequirementsFulfilled
   m_EditorClassIdentifier: 
   transitionState: {fileID: 11400000, guid: cbcc64686188c964db889b6e6d0becfa, type: 2}
-  conditions: []
+  conditions:
+  - {fileID: 11400000, guid: 729df3e85aa5bd6458bd0e861d66fa26, type: 2}
