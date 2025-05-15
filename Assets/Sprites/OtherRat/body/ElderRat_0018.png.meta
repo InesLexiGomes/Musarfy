@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      ElderRat_0018_0: -6988025398208327150
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
