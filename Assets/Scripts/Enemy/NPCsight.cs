@@ -30,7 +30,7 @@ public class NPC : MonoBehaviour
             PlayerInput playerInput = hit.collider.GetComponent<PlayerInput>();
             if (playerInput != null)
             {
-                Debug.Log("Player detected!");
+                Debug.Log("Player detected!");      
             }
         }
     }
