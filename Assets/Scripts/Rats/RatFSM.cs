@@ -3,7 +3,11 @@ using UnityEngine;
 public class RatFSM : FSM
 {
     [SerializeField] private float maxDistance;
+    [SerializeField] private float minDistance;
     [SerializeField] private float returnDistance;
+
+    [SerializeField] private string[] questDialogue;
+    [SerializeField] private string[] questEndDialogue;
 
     private PlayerInput player;
     private RatMovement movement;
@@ -14,9 +18,13 @@ public class RatFSM : FSM
     private bool beingInteractedWith = false;
     private bool isSpotted = false;
 
-    private void Start()
+    private float distanceToPlayer;
+
+    protected override void Start()
     {
+        base.Start();
         player = FindAnyObjectByType<PlayerInput>();
+        movement = GetComponent<RatMovement>();
         initialPosition = transform.position;
     }
 
@@ -72,8 +80,11 @@ public class RatFSM : FSM
     // Action Methods
     private void Follow()
     {
-        Vector2 moveDirection = (transform.position - player.transform.position).normalized;
-        movement.DoMovement(moveDirection);
+        if ((player.transform.position - transform.position).magnitude > minDistance)
+        {
+            Vector2 moveDirection = player.transform.position - transform.position;
+            movement.DoMovement(moveDirection);
+        }
     }
     private void Reset()
     {
@@ -81,7 +92,7 @@ public class RatFSM : FSM
     }
     private void Return()
     {
-        Vector2 newPosition = -(transform.position - player.transform.position).normalized * returnDistance;
+        Vector2 newPosition = player.transform.position -(player.transform.position- transform.position).normalized * returnDistance;
         transform.position = newPosition;
     }
     private void Talk()
@@ -94,6 +105,10 @@ public class RatFSM : FSM
     {
         beingInteractedWith = true;
     }
+    public void StopInteracting()
+    {
+        beingInteractedWith = false;
+    }
     public void FulfillRequirements()
     {
         requirementsFulfilled = true;
@@ -104,7 +119,31 @@ public class RatFSM : FSM
     }
     private bool OutOfPlayerRange()
     {
-        float distance = (transform.position - player.transform.position).magnitude;
-        return distance > maxDistance;
+        distanceToPlayer = (player.transform.position - transform.position).magnitude;
+        return distanceToPlayer > maxDistance;
+    }
+
+    public string GetQuestDialogue(uint currentDialogueID)
+    {
+        if (!requirementsFulfilled)
+        {
+            return questDialogue[currentDialogueID];
+        }
+        else
+        {
+            return questEndDialogue[currentDialogueID];
+        }
+    }
+
+    public int GetQuestDialogueLenght()
+    {
+        if (!requirementsFulfilled)
+        {
+            return questDialogue.Length;
+        }
+        else
+        {
+            return questEndDialogue.Length;
+        }
     }
 }

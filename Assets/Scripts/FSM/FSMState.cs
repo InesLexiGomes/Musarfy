@@ -8,8 +8,10 @@ public class FSMState : ScriptableObject
 
     public void Execute(FSM stateMachine)
     {
-        // Execute action
-        action.Execute(stateMachine);
+        // Verify action exists
+        if (action != null)
+            // Execute action
+            action.Execute(stateMachine);
 
         foreach (FSMTransition transition in transitions)
         {

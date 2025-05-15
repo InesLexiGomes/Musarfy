@@ -24,6 +24,11 @@ public class EnemyFOV : MonoBehaviour
         StartCoroutine("FindTargetWithDelay", .2f);
     }
 
+    private void LateUpdate()
+    {
+        DrawFieldOfView();
+    }
+
     IEnumerator FindTargetWithDelay(float delay)
     {
         while (true)
@@ -57,6 +62,11 @@ public class EnemyFOV : MonoBehaviour
                 }
             }
         }
+    }
+
+    private void DrawFieldOfView()
+    {
+
     }
 
     public Vector3 DirFromAngle(float angleInDegrees, bool global)
