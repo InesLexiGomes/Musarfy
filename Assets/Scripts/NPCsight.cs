@@ -6,12 +6,13 @@ public class NPC : MonoBehaviour
 
     [SerializeField] int maxDistance = 1000;
     [SerializeField] LayerMask layers;
-
+    private PlayerInput player;
 
 
 
     void Start()
     {
+        player = FindFirstObjectByType<PlayerInput>();
     }
 
 
@@ -26,11 +27,10 @@ public class NPC : MonoBehaviour
         {
             Debug.Log("Hit: " + hit.collider.name);
 
-            if (hit.collider.CompareTag("Player"))
+            PlayerInput playerInput = hit.collider.GetComponent<PlayerInput>();
+            if (playerInput != null)
             {
-
                 Debug.Log("Player detected!");
-
             }
         }
     }

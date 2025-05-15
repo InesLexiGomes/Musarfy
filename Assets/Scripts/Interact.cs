@@ -4,17 +4,15 @@ using UnityEngine.Rendering;
 
 public class Interact : MonoBehaviour
 {
+    [SerializeField] private float distanceThreshold = 2f;
+    
     private bool inDistance = false;
 
-    [SerializeField] private float distanceThreshold = 2f;
+    private PlayerInput player;
 
-    private GameObject player;
-
+    private Collider2D collider2D;
 
     private SpriteRenderer spriteRenderer;
-
-    private CircleCollider2D collider2D;
-
 
     private bool lettuce = false;
 
@@ -24,18 +22,25 @@ public class Interact : MonoBehaviour
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
         collider2D = GetComponent<CircleCollider2D>();
-
-        
-        player = FindFirstObjectByType<PlayerInput>().gameObject;
+        player = FindFirstObjectByType<PlayerInput>();
     }
 
     void Update()
     {
-        ItemPickUp();
+        if(player == null)
+        {
+            player = FindFirstObjectByType<PlayerInput>();
+        }
+        CheckItemPickUp();
     }
 
-    void ItemPickUp()
+    void CheckItemPickUp()
     {
+        if (player == null)
+        {
+            return;
+        }
+
         float distanceToPlayer = Vector2.Distance(player.transform.position, transform.position);
 
         if (distanceToPlayer < distanceThreshold)
@@ -50,9 +55,7 @@ public class Interact : MonoBehaviour
             spriteRenderer.enabled = false;
             collider2D.enabled = false;
             enabled = false;
-
             lettuce = true;
-
         }
     }
 }
