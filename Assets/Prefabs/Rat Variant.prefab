@@ -1,5 +1,73 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &8642203316506663810
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5947037474903072268}
+  - component: {fileID: 1105865823902583237}
+  m_Layer: 6
+  m_Name: DialogueTrigger
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5947037474903072268
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8642203316506663810}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5956096347335553323}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!58 &1105865823902583237
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8642203316506663810}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_Radius: 75
 --- !u!1001 &8205214804623585136
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -80,12 +148,20 @@ PrefabInstance:
     - {fileID: 1965743872013064773, guid: 50c6e434beb9a594597ed185470c6801, type: 3}
     - {fileID: 4076032072117653903, guid: 50c6e434beb9a594597ed185470c6801, type: 3}
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 2555380980386012763, guid: 50c6e434beb9a594597ed185470c6801, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 5947037474903072268}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 1831822683674082512, guid: 50c6e434beb9a594597ed185470c6801, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2714811815861940850}
   m_SourcePrefab: {fileID: 100100000, guid: 50c6e434beb9a594597ed185470c6801, type: 3}
+--- !u!4 &5956096347335553323 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2555380980386012763, guid: 50c6e434beb9a594597ed185470c6801, type: 3}
+  m_PrefabInstance: {fileID: 8205214804623585136}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &7544996546215416736 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1831822683674082512, guid: 50c6e434beb9a594597ed185470c6801, type: 3}
@@ -104,8 +180,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   anyStateTransitions: []
-  initialState: {fileID: 11400000, guid: cbcc64686188c964db889b6e6d0becfa, type: 2}
+  initialState: {fileID: 11400000, guid: 950c9c92feb2aaf4d8b1c04bd14df013, type: 2}
   CurrentState: {fileID: 0}
   maxDistance: 160
   minDistance: 30
   returnDistance: 40
+  questDialogue: []
+  questEndDialogue: []
+  sprite: {fileID: 0}

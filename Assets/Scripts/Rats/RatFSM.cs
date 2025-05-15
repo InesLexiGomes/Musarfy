@@ -9,8 +9,11 @@ public class RatFSM : FSM
     [SerializeField] private string[] questDialogue;
     [SerializeField] private string[] questEndDialogue;
 
+    [SerializeField] private Sprite sprite;
+
     private PlayerInput player;
     private RatMovement movement;
+    private DialogueManager dialogueManager;
 
     private Vector2 initialPosition;
 
@@ -26,6 +29,7 @@ public class RatFSM : FSM
         player = FindAnyObjectByType<PlayerInput>();
         movement = GetComponent<RatMovement>();
         initialPosition = transform.position;
+        dialogueManager = FindAnyObjectByType<DialogueManager>();
     }
 
     public override void DoAction(string actionID)
@@ -97,11 +101,11 @@ public class RatFSM : FSM
     }
     private void Talk()
     {
-        // Insert dialogue code here
+        dialogueManager.EnableDialogueUI(this);
     }
 
     // Condition Methods
-    public void Interacting()
+    public void StartInteracting()
     {
         beingInteractedWith = true;
     }
@@ -145,5 +149,10 @@ public class RatFSM : FSM
         {
             return questEndDialogue.Length;
         }
+    }
+
+    public Sprite GetNPCSprite()
+    {
+        return sprite;
     }
 }
