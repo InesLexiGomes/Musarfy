@@ -46,6 +46,9 @@ public class EnemyFOV : MonoBehaviour
 
         for (int i = 0; i < targetsInViewRadius.Length; i++)
         {
+            RatFSM fsm = targetsInViewRadius[i].GetComponent<RatFSM>();
+            fsm.Seen();
+
             Transform target = targetsInViewRadius[i].transform;
             Vector2 dirToTarget = (target.position - transform.position).normalized;
 
