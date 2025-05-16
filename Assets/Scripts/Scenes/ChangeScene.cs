@@ -26,7 +26,10 @@ public class ChangeScene : MonoBehaviour
     {
         RatMovement isPlayer = collision.GetComponentInParent<RatMovement>();
         if (isPlayer != null)
+        {
             LoadSelectedScene();
+        }
+
     }
 }
 
