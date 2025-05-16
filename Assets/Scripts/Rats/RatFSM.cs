@@ -2,6 +2,8 @@ using UnityEngine;
 
 public class RatFSM : FSM
 {
+    [SerializeField] private uint requiredItemID;
+
     [SerializeField] private float maxDistance;
     [SerializeField] private float minDistance;
     [SerializeField] private float returnDistance;
@@ -12,12 +14,12 @@ public class RatFSM : FSM
     [SerializeField] private Sprite sprite;
 
     private PlayerInput player;
+    private Inventory inventory;
     private RatMovement movement;
     private DialogueManager dialogueManager;
 
     private Vector2 initialPosition;
 
-    private bool requirementsFulfilled = false;
     private bool beingInteractedWith = false;
     private bool isSpotted = false;
 
@@ -27,6 +29,7 @@ public class RatFSM : FSM
     {
         base.Start();
         player = FindAnyObjectByType<PlayerInput>();
+        inventory = player.gameObject.GetComponent<Inventory>();
         movement = GetComponent<RatMovement>();
         initialPosition = transform.position;
         dialogueManager = FindAnyObjectByType<DialogueManager>();
@@ -68,7 +71,7 @@ public class RatFSM : FSM
                 return !beingInteractedWith;
 
             case ("Requirements Fulfilled?"):
-                return requirementsFulfilled;
+                return CheckRequirements();
 
             case ("Is Spotted?"):
                 return isSpotted;
@@ -113,9 +116,9 @@ public class RatFSM : FSM
     {
         beingInteractedWith = false;
     }
-    public void FulfillRequirements()
+    private bool CheckRequirements()
     {
-        requirementsFulfilled = true;
+        return inventory.CheckItemInInventory(requiredItemID);
     }
     public void Seen()
     {
@@ -129,7 +132,7 @@ public class RatFSM : FSM
 
     public string GetQuestDialogue(uint currentDialogueID)
     {
-        if (!requirementsFulfilled)
+        if (!CheckRequirements())
         {
             return questDialogue[currentDialogueID];
         }
@@ -141,7 +144,7 @@ public class RatFSM : FSM
 
     public int GetQuestDialogueLenght()
     {
-        if (!requirementsFulfilled)
+        if (!CheckRequirements())
         {
             return questDialogue.Length;
         }
