@@ -222,7 +222,11 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Pescador_6_0: -8319619294777813021
+      Pescador_6_1: 6929331644788621329
+      Pescador_6_2: -7773634039779554387
+      Pescador_6_3: -211025118746881416
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
