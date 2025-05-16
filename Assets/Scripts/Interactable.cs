@@ -2,9 +2,9 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Rendering;
 
-public class Interact : MonoBehaviour
+public class Interactable : MonoBehaviour
 {
-    [SerializeField] private float distanceThreshold = 2f;
+    [SerializeField] private float distanceThreshold = 40f;
     [SerializeField] private uint itemID;
     
     private bool inDistance = false;
