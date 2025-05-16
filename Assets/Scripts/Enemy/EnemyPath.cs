@@ -71,15 +71,13 @@ public class EnemyPath : MonoBehaviour
 
     private void Flip()
     {
-        // If direction.x is positive, face right (0° rotation), else face left (180° rotation)
-        float zRotation;
-        if (direction.x >= 0)
-            zRotation = 0f;
-        else
-            zRotation = 180f;
+        // Calcula o ângulo entre o eixo X e o vetor de direção
+        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
 
-        transform.rotation = Quaternion.Euler(0, 0, zRotation);
+        // Aplica a rotação no eixo Z (top-down 2D)
+        transform.rotation = Quaternion.Euler(0, 0, angle);
     }
+
 
     private IEnumerator PauseBeforeNextWaypoint()
     {
