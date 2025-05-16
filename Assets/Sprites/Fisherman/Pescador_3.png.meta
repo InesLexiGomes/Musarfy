@@ -1,28 +1,25 @@
 fileFormatVersion: 2
-guid: d61b60a4029c4409a9ef1bb323248335
+guid: 0787699b1c87545c9b2be5e6f2c52d18
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -671874528751878415
-    second: Pescador3_0
+      213: -990393680311260391
+    second: Pescador_3_0
   - first:
-      213: -1253108438074705682
-    second: Pescador3_1
+      213: 2297415941234585692
+    second: Pescador_3_1
   - first:
-      213: -7201582977844222762
-    second: Pescador3_2
+      213: 3404548471528876088
+    second: Pescador_3_2
   - first:
-      213: -5505732629094008909
-    second: Pescador3_3
+      213: 2959132084838735189
+    second: Pescador_3_3
   - first:
-      213: 7774494187074426085
-    second: Pescador3_4
+      213: 8990282388819863828
+    second: Pescador_3_4
   - first:
-      213: 6944004178689665853
-    second: Pescador3_5
-  - first:
-      213: -8142861493008904706
-    second: Pescador3_6
+      213: 3144620911657549099
+    second: Pescador_3_5
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -64,12 +61,12 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 1
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -93,7 +90,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 2
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -127,11 +124,24 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Pescador3_0
+      name: Pescador_3_0
       rect:
         serializedVersion: 2
         x: 240
@@ -146,14 +156,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 1fe7c140da50da6f0800000000000000
-      internalID: -671874528751878415
+      spriteID: 91b6141f13a6142f0800000000000000
+      internalID: -990393680311260391
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Pescador3_1
+      name: Pescador_3_1
       rect:
         serializedVersion: 2
         x: 253
@@ -168,14 +178,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: ee8338bc3801c9ee0800000000000000
-      internalID: -1253108438074705682
+      spriteID: c507b9650af02ef10800000000000000
+      internalID: 2297415941234585692
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Pescador3_2
+      name: Pescador_3_2
       rect:
         serializedVersion: 2
         x: 259
@@ -190,58 +200,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 6d46811ff66de0c90800000000000000
-      internalID: -7201582977844222762
+      spriteID: 838e31afbc26f3f20800000000000000
+      internalID: 3404548471528876088
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Pescador3_3
-      rect:
-        serializedVersion: 2
-        x: 47
-        y: 191
-        width: 6
-        height: 6
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 3b7f29e2855b793b0800000000000000
-      internalID: -5505732629094008909
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Pescador3_4
-      rect:
-        serializedVersion: 2
-        x: 72
-        y: 3
-        width: 245
-        height: 202
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 5e419e8a54d84eb60800000000000000
-      internalID: 7774494187074426085
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Pescador3_5
+      name: Pescador_3_3
       rect:
         serializedVersion: 2
         x: 67
@@ -256,14 +222,36 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: d3b20a5720f0e5060800000000000000
-      internalID: 6944004178689665853
+      spriteID: 55d1648f3f2f01920800000000000000
+      internalID: 2959132084838735189
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Pescador3_6
+      name: Pescador_3_4
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 3
+        width: 245
+        height: 202
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 419ee083336e3cc70800000000000000
+      internalID: 8990282388819863828
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pescador_3_5
       rect:
         serializedVersion: 2
         x: 319
@@ -278,8 +266,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: efd4ff56d9ebefe80800000000000000
-      internalID: -8142861493008904706
+      spriteID: b2dfc98ee00f3ab20800000000000000
+      internalID: 3144620911657549099
       vertices: []
       indices: 
       edges: []
@@ -288,7 +276,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
     vertices: []
     indices: 
