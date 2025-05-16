@@ -24,7 +24,8 @@ public class ChangeScene : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.GetComponent<RatMovement>() != null)
+        RatMovement isPlayer = collision.GetComponentInParent<RatMovement>();
+        if (isPlayer != null)
             LoadSelectedScene();
     }
 }
