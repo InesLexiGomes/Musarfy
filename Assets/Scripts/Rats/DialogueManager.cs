@@ -1,22 +1,30 @@
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
-public class Dialogue : MonoBehaviour
+public class DialogueManager : MonoBehaviour
 {
     [SerializeField] private GameObject dialogueUI;
-    [SerializeField] private TextMeshPro text;
+    [SerializeField] private Image image;
+    [SerializeField] private TextMeshProUGUI text;
 
     private PlayerInput player;
     private bool dialogueEnabled;
 
     private RatFSM currentRat;
-    private uint currentDialogueID;
+    private uint currentDialogueID = 0;
+
+    private void Start()
+    {
+        dialogueUI.SetActive(false);
+        player = FindAnyObjectByType<PlayerInput>();
+    }
 
     private void Update()
     {
         if (dialogueEnabled && Input.GetKeyDown(KeyCode.Mouse0))
         {
-            DisableDialogue();
+            NextDialogue();
         }
     }
 
@@ -28,12 +36,14 @@ public class Dialogue : MonoBehaviour
         player.enabled = false;
         currentRat = rat;
 
-        text.text = currentRat.GetQuestDialogue(currentDialogueID);
+        text.text = currentRat.GetQuestDialogue(0);
+        image.sprite = currentRat.GetNPCSprite();
     }
 
     public void NextDialogue()
     {
-        if (++currentDialogueID < currentRat.GetQuestDialogueLenght())
+        currentDialogueID++;
+        if (currentDialogueID < currentRat.GetQuestDialogueLenght())
         {
             text.text = currentRat.GetQuestDialogue(currentDialogueID);
         }

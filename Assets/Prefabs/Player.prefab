@@ -346,7 +346,7 @@ CapsuleCollider2D:
   m_CompositeOperation: 0
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: -0.1890707}
-  m_Size: {x: 1.77, y: 2.6385012}
+  m_Size: {x: 19.79, y: 31.71}
   m_Direction: 0
 --- !u!1 &2662897801680088337
 GameObject:
