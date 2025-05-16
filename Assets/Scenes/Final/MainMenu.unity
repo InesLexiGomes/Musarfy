@@ -284,8 +284,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b9427f78a21b8840b0a38b9711c2cce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MusicSource:
-  - {fileID: 1460481386}
+  musicSource: []
   SFXSource:
   - {fileID: 580301786}
   - {fileID: 1867065292}
@@ -670,9 +669,13 @@ MonoBehaviour:
 
     WASD or Arrow keys
 
-    Action:
+    Whistle:
 
-    Space bar
+    Spacebar
+
+    Interact:
+
+    E
 
 '
   m_isRightToLeft: 0
@@ -783,7 +786,7 @@ AudioSource:
   m_audioClip: {fileID: 8300000, guid: 565beaf56920f2d45b8cd3e1d897542b, type: 3}
   m_Resource: {fileID: 8300000, guid: 565beaf56920f2d45b8cd3e1d897542b, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.09
   m_Pitch: 1
   Loop: 0
   Mute: 0

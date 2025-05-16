@@ -4,6 +4,7 @@ using UnityEngine.Rendering;
 using Unity.VisualScripting;
 using System.Collections.Generic;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 public class EnemyFOV : MonoBehaviour
 {
@@ -58,9 +59,10 @@ public class EnemyFOV : MonoBehaviour
                 RaycastHit2D hit = Physics2D.Raycast(transform.position, dirToTarget, disToTarget, obstacleMask);
                 if (!hit)
                 {
-                    visibleTargets.Add(target);
+                    /*visibleTargets.Add(target);
                     RatFSM fsm = targetsInViewRadius[i].GetComponent<RatFSM>();
-                    if (fsm != null) fsm.Seen();
+                    if (fsm != null) fsm.Seen();*/
+                    SceneManager.LoadScene(2);
                 }
             }
         }

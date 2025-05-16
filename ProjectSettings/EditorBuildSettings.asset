@@ -12,8 +12,8 @@ EditorBuildSettings:
     path: Assets/Scenes/Final/Intro.unity
     guid: 5d657203ce5ebf64ebc51d85ebc9029f
   - enabled: 1
-    path: Assets/Scenes/Final/Village.unity
-    guid: 146db8739f13754448b9c1903eeb416a
+    path: Assets/Scenes/Final/VillageBackup.unity
+    guid: 84f649a0e2249114ba66bf26340854a6
   - enabled: 1
     path: Assets/Scenes/Final/House1.unity
     guid: 019f93550035fbb4f9290a3df60b9b96
