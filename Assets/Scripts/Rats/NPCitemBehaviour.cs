@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class NPCitemBehaviour : MonoBehaviour
+public class NPCItemBehaviour : MonoBehaviour
 {
 
     Interact interact;
