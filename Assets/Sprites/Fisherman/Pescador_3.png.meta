@@ -1,13 +1,25 @@
 fileFormatVersion: 2
-guid: 1d0917e6223904cac824bf9f60f60978
+guid: 0787699b1c87545c9b2be5e6f2c52d18
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -3361040990235929467
-    second: Pescador4_0
+      213: -990393680311260391
+    second: Pescador_3_0
   - first:
-      213: 6295374587872591177
-    second: Pescador4_1
+      213: 2297415941234585692
+    second: Pescador_3_1
+  - first:
+      213: 3404548471528876088
+    second: Pescador_3_2
+  - first:
+      213: 2959132084838735189
+    second: Pescador_3_3
+  - first:
+      213: 8990282388819863828
+    second: Pescador_3_4
+  - first:
+      213: 3144620911657549099
+    second: Pescador_3_5
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -116,13 +128,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Pescador4_0
+      name: Pescador_3_0
       rect:
         serializedVersion: 2
-        x: 72
-        y: 9
-        width: 241
-        height: 184
+        x: 240
+        y: 246
+        width: 8
+        height: 9
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -131,20 +143,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 584d575e60f2b51d0800000000000000
-      internalID: -3361040990235929467
+      spriteID: 91b6141f13a6142f0800000000000000
+      internalID: -990393680311260391
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Pescador4_1
+      name: Pescador_3_1
       rect:
         serializedVersion: 2
-        x: 123
-        y: 191
-        width: 20
-        height: 19
+        x: 253
+        y: 197
+        width: 12
+        height: 47
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -153,8 +165,96 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 94dba2655d9ad5750800000000000000
-      internalID: 6295374587872591177
+      spriteID: c507b9650af02ef10800000000000000
+      internalID: 2297415941234585692
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pescador_3_2
+      rect:
+        serializedVersion: 2
+        x: 259
+        y: 210
+        width: 11
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 838e31afbc26f3f20800000000000000
+      internalID: 3404548471528876088
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pescador_3_3
+      rect:
+        serializedVersion: 2
+        x: 67
+        y: 114
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 55d1648f3f2f01920800000000000000
+      internalID: 2959132084838735189
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pescador_3_4
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 3
+        width: 245
+        height: 202
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 419ee083336e3cc70800000000000000
+      internalID: 8990282388819863828
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pescador_3_5
+      rect:
+        serializedVersion: 2
+        x: 319
+        y: 108
+        width: 6
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b2dfc98ee00f3ab20800000000000000
+      internalID: 3144620911657549099
       vertices: []
       indices: 
       edges: []

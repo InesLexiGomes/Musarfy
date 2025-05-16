@@ -1,28 +1,13 @@
 fileFormatVersion: 2
-guid: d61b60a4029c4409a9ef1bb323248335
+guid: 8d50b323e4ec8475f8cc8e389a44a0b0
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -671874528751878415
-    second: Pescador3_0
+      213: -1731069849258649528
+    second: Pescador_2_0
   - first:
-      213: -1253108438074705682
-    second: Pescador3_1
-  - first:
-      213: -7201582977844222762
-    second: Pescador3_2
-  - first:
-      213: -5505732629094008909
-    second: Pescador3_3
-  - first:
-      213: 7774494187074426085
-    second: Pescador3_4
-  - first:
-      213: 6944004178689665853
-    second: Pescador3_5
-  - first:
-      213: -8142861493008904706
-    second: Pescador3_6
+      213: -867961472922364664
+    second: Pescador_2_1
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -131,101 +116,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Pescador3_0
-      rect:
-        serializedVersion: 2
-        x: 240
-        y: 246
-        width: 8
-        height: 9
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 1fe7c140da50da6f0800000000000000
-      internalID: -671874528751878415
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Pescador3_1
-      rect:
-        serializedVersion: 2
-        x: 253
-        y: 197
-        width: 12
-        height: 47
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: ee8338bc3801c9ee0800000000000000
-      internalID: -1253108438074705682
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Pescador3_2
-      rect:
-        serializedVersion: 2
-        x: 259
-        y: 210
-        width: 11
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 6d46811ff66de0c90800000000000000
-      internalID: -7201582977844222762
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Pescador3_3
-      rect:
-        serializedVersion: 2
-        x: 47
-        y: 191
-        width: 6
-        height: 6
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 3b7f29e2855b793b0800000000000000
-      internalID: -5505732629094008909
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Pescador3_4
+      name: Pescador_2_0
       rect:
         serializedVersion: 2
         x: 72
-        y: 3
-        width: 245
-        height: 202
+        y: 9
+        width: 241
+        height: 184
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -234,20 +131,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 5e419e8a54d84eb60800000000000000
-      internalID: 7774494187074426085
+      spriteID: 8489c89c4210af7e0800000000000000
+      internalID: -1731069849258649528
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Pescador3_5
+      name: Pescador_2_1
       rect:
         serializedVersion: 2
-        x: 67
-        y: 114
-        width: 7
-        height: 7
+        x: 242
+        y: 191
+        width: 20
+        height: 19
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -256,30 +153,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: d3b20a5720f0e5060800000000000000
-      internalID: 6944004178689665853
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Pescador3_6
-      rect:
-        serializedVersion: 2
-        x: 319
-        y: 108
-        width: 6
-        height: 11
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: efd4ff56d9ebefe80800000000000000
-      internalID: -8142861493008904706
+      spriteID: 805dcb793a164f3f0800000000000000
+      internalID: -867961472922364664
       vertices: []
       indices: 
       edges: []
