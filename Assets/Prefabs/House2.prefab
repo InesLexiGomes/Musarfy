@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 961466845190120185}
   - component: {fileID: 1713583432550389696}
+  - component: {fileID: 5635628466770951092}
   m_Layer: 7
   m_Name: Door
   m_TagString: Untagged
@@ -79,6 +80,19 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 84.28812, y: 67.38748}
   m_EdgeRadius: 0
+--- !u!114 &5635628466770951092
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3011366613508156696}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 361701b04252dfb42a8ff6530c0a9ecb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  selectedScene: MainMenu
 --- !u!1 &4414944719220272431
 GameObject:
   m_ObjectHideFlags: 0
@@ -323,9 +337,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_ShadowGroup: 0
-  m_Priority: 0
+  m_Priority: 1
   m_ComponentVersion: 5
-  m_HasRenderer: 0
+  m_HasRenderer: 1
   m_UseRendererSilhouette: 1
   m_CastsShadows: 1
   m_SelfShadows: 0
@@ -351,12 +365,12 @@ MonoBehaviour:
     m_TrimEdge: 10
     m_FlipX: 0
     m_FlipY: 0
-    m_InitialTrim: 10
+    m_InitialTrim: 0
   m_CastingOption: 1
-  m_PreviousTrimEdge: 0
-  m_PreviousEdgeProcessing: -1
-  m_PreviousShadowCastingSource: -1
-  m_PreviousShadowShape2DSource: {fileID: 0}
+  m_PreviousTrimEdge: 10
+  m_PreviousEdgeProcessing: 1
+  m_PreviousShadowCastingSource: 2
+  m_PreviousShadowShape2DSource: {fileID: 7508610249984018364}
   references:
     version: 2
     RefIds:
