@@ -147,6 +147,7 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 1965743872013064773, guid: 50c6e434beb9a594597ed185470c6801, type: 3}
     - {fileID: 4076032072117653903, guid: 50c6e434beb9a594597ed185470c6801, type: 3}
+    - {fileID: 1880233211944904595, guid: 50c6e434beb9a594597ed185470c6801, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 2555380980386012763, guid: 50c6e434beb9a594597ed185470c6801, type: 3}
@@ -182,9 +183,10 @@ MonoBehaviour:
   anyStateTransitions: []
   initialState: {fileID: 11400000, guid: 950c9c92feb2aaf4d8b1c04bd14df013, type: 2}
   CurrentState: {fileID: 0}
+  requiredItemID: 0
   maxDistance: 160
-  minDistance: 30
-  returnDistance: 40
+  minDistance: 50
+  returnDistance: 60
   questDialogue: []
   questEndDialogue: []
   sprite: {fileID: 0}

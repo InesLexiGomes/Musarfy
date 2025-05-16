@@ -161,7 +161,7 @@ MonoBehaviour:
     m_TrimEdge: 1
     m_FlipX: 0
     m_FlipY: 0
-    m_InitialTrim: 1
+    m_InitialTrim: 0
   m_CastingOption: 1
   m_PreviousTrimEdge: 1
   m_PreviousEdgeProcessing: 1
@@ -186,6 +186,7 @@ GameObject:
   - component: {fileID: 8424620008282217411}
   - component: {fileID: 1965743872013064773}
   - component: {fileID: 4076032072117653903}
+  - component: {fileID: 1880233211944904595}
   m_Layer: 6
   m_Name: Player
   m_TagString: Untagged
@@ -279,6 +280,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   head: {fileID: 8566880195991321517}
+--- !u!114 &1880233211944904595
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1831822683674082512}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35256861fda7ebb458ea7e23807fce42, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2022296308129232721
 GameObject:
   m_ObjectHideFlags: 0
@@ -477,7 +490,7 @@ MonoBehaviour:
     m_TrimEdge: 0.5
     m_FlipX: 0
     m_FlipY: 0
-    m_InitialTrim: 0.5
+    m_InitialTrim: 0
   m_CastingOption: 1
   m_PreviousTrimEdge: 0.5
   m_PreviousEdgeProcessing: 1

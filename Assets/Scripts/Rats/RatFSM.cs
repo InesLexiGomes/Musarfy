@@ -92,6 +92,10 @@ public class RatFSM : FSM
             Vector2 moveDirection = player.transform.position - transform.position;
             movement.DoMovement(moveDirection);
         }
+        else
+        {
+            movement.DoMovement(Vector2.zero);
+        }
     }
     private void Reset()
     {
