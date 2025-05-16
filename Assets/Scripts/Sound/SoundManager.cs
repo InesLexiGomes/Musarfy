@@ -6,9 +6,9 @@ public class SoundManager : MonoBehaviour
     private AudioMixer audioMixer;
 
     [Header("Audio Sources")]
-    [SerializeField] public AudioSource[] MusicSource;
+    [SerializeField] private AudioSource[] musicSource;
 
-    [SerializeField] public AudioSource[] SFXSource;
+    [SerializeField] private AudioSource[] SFXSource;
 
     [SerializeField] private AudioSource[] KeyInput;
 
@@ -18,17 +18,17 @@ public class SoundManager : MonoBehaviour
     [SerializeField] private AudioClip[] SFXClips;
 
     [Header("Indexes")]
-    [SerializeField] public int musicIndex = 0;
-    [SerializeField] public int sfxIndex = 0;
+    [SerializeField] private int musicIndex = 0;
+    [SerializeField] private int sfxIndex = 0;
 
     public int MusicIndex => musicIndex;
     public int SFXIndex => sfxIndex;
     
     void Start()
     {
-        if (MusicSource != null)
+        if (musicSource != null)
         {
-            foreach (var source in MusicSource)
+            foreach (var source in musicSource)
             {
                 if (source != null)
                 {
@@ -36,9 +36,9 @@ public class SoundManager : MonoBehaviour
                 }
             }
         }
-        if (MusicSource == null)
+        if (musicSource == null)
         {
-            MusicSource = GetComponents<AudioSource>();
+            musicSource = GetComponents<AudioSource>();
         }
 
         if (SFXSource == null)
@@ -58,25 +58,25 @@ public class SoundManager : MonoBehaviour
 
     void Update()
     {
-        if (MusicSource != null && MusicSource.Length > 0 && MusicSource[musicIndex] != null && MusicSource[musicIndex].isPlaying)
+        if (musicSource != null && musicSource.Length > 0 && musicSource[musicIndex] != null && musicSource[musicIndex].isPlaying)
         {
-            MusicSource[musicIndex].pitch += pitchChangeSpeed * pitchDirection * Time.deltaTime;
+            musicSource[musicIndex].pitch += pitchChangeSpeed * pitchDirection * Time.deltaTime;
 
-            if (MusicSource[musicIndex].pitch > maxPitch)
+            if (musicSource[musicIndex].pitch > maxPitch)
             {
-                float overflow = MusicSource[musicIndex].pitch - maxPitch;
-                MusicSource[musicIndex].pitch = minPitch + overflow;
+                float overflow = musicSource[musicIndex].pitch - maxPitch;
+                musicSource[musicIndex].pitch = minPitch + overflow;
             }
-            else if (MusicSource[musicIndex].pitch < minPitch)
+            else if (musicSource[musicIndex].pitch < minPitch)
             {
-                float underflow = minPitch - MusicSource[musicIndex].pitch;
-                MusicSource[musicIndex].pitch = maxPitch - underflow;
+                float underflow = minPitch - musicSource[musicIndex].pitch;
+                musicSource[musicIndex].pitch = maxPitch - underflow;
             }
         }
 
-        if (MusicSource != null && MusicSource.Length > 0 && MusicSource[musicIndex] != null && MusicSource[musicIndex].clip != null && !MusicSource[musicIndex].isPlaying)
+        if (musicSource != null && musicSource.Length > 0 && musicSource[musicIndex] != null && musicSource[musicIndex].clip != null && !musicSource[musicIndex].isPlaying)
         {
-            MusicSource[musicIndex].Play();
+            musicSource[musicIndex].Play();
         }
         
 
@@ -96,7 +96,7 @@ public class SoundManager : MonoBehaviour
 
     public void KeyInputPlay(int keyInputIndex)
     {
-        if( KeyInput != null && KeyInput.Length > 0 && KeyInput[keyInputIndex] != null && Input.GetKeyDown(KeyCode.Q))
+        if( KeyInput != null && KeyInput.Length > 0 && KeyInput[keyInputIndex] != null && Input.GetKeyDown(KeyCode.Space))
         {
             KeyInput[keyInputIndex].Play();
         }
@@ -109,16 +109,16 @@ public class SoundManager : MonoBehaviour
 
     public void PlayMusic(int index)
     {
-        if (MusicClips != null && index >= 0 && index < MusicClips.Length && MusicSource != null)
+        if (MusicClips != null && index >= 0 && index < MusicClips.Length && musicSource != null)
         {
-            if (MusicSource != null && musicIndex >= 0 && musicIndex < MusicSource.Length && MusicSource[musicIndex] != null)
+            if (musicSource != null && musicIndex >= 0 && musicIndex < musicSource.Length && musicSource[musicIndex] != null)
             {
-                MusicSource[musicIndex].clip = MusicClips[index];
-                MusicSource[musicIndex].Play();
-                if (MusicSource[musicIndex].pitch < minPitch || MusicSource[musicIndex].pitch > maxPitch)
+                musicSource[musicIndex].clip = MusicClips[index];
+                musicSource[musicIndex].Play();
+                if (musicSource[musicIndex].pitch < minPitch || musicSource[musicIndex].pitch > maxPitch)
                 {
                     float range = maxPitch - minPitch;
-                    MusicSource[musicIndex].pitch = minPitch + Mathf.Repeat(MusicSource[musicIndex].pitch - minPitch, range);
+                    musicSource[musicIndex].pitch = minPitch + Mathf.Repeat(musicSource[musicIndex].pitch - minPitch, range);
                 }
             }
         }
